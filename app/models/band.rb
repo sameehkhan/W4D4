@@ -1,31 +1,14 @@
 class Band < ApplicationRecord
   validates :name, presence: true
 
-  def index
-
+  def self.find_by_name(name)
+    band = Band.find_by(name: name)
+    if band
+      return band
+    else
+      return nil
+    end
   end
 
-  def create
 
-  end
-
-  def new
-
-  end
-
-  def edit
-
-  end
-
-  def show
-
-  end
-
-  def update
-
-  end
-
-  def destroy 
-
-  end
 end

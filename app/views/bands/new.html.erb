@@ -1,0 +1,11 @@
+<style>
+  body { background-color:#cccccc;}
+
+</style>
+<form action= "<%=bands_url%>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="band_name">Band Name:
+  <input id="band_name" type="text" name="band[name]">
+  </label>
+  <input type="submit" value="Add Band">
+</form>

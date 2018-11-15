@@ -5,8 +5,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login(@user)
-      render json: @user
-      # redirect_to users_url
+      redirect_to bands_url
     else
       render json: ["Invalid Credentials"]
     end
@@ -19,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @user = User.new
     render :new
   end
 end
