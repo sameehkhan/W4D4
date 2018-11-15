@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
-  validates :password, length: {minimun: 6, allow_nil: true}
+  validates :password, length: {minimum: 6, allow_nil: true}
   validates :password_digest, presence: { message: 'Must provide password'}
   before_validation :ensure_session_token
 

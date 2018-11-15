@@ -1,9 +1,9 @@
-<h3>Create Account</h3>
+<h3>Login</h3>
 <style>
   body { background-color:#cccccc;}
 
 </style>
-<form action= "<%=users_url%>" method="post">
+<form action= "<%=session_url%>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="email">Email:</label>
   <input id="email" type="email" name="user[email]">
@@ -12,5 +12,5 @@
   <label for="password">Password:
   <input id="password" type="text" name="user[password]">
   </label>
-  <input type="submit" value="Create Account">
+  <input type="submit" value="Login">
 </form>
