@@ -7,14 +7,14 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(band_params)
     if @band.save
-      redirect_to band_url
+      redirect_to band_url(@band)
     else
       render json: @band.errors.full_messages, status: 422
     end
   end
 
   def new
-
+    render :new
   end
 
   def edit
@@ -22,12 +22,8 @@ class BandsController < ApplicationController
   end
 
   def show
-    @band = Band.find_by(id: params[:id])
-      if @band
-        render :show
-      else
-        redirect_to bands_url
-      end
+    @band = Band.find(params[:id])
+    render :show
   end
 
   def update
@@ -35,7 +31,7 @@ class BandsController < ApplicationController
   end
 
   def destroy
-
+    
   end
 
   def band_params
