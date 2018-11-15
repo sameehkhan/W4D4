@@ -4,8 +4,8 @@
     <title>MusicShare</title>
     <h1>Music Share</h1>
 
-    <!-- <% if current_user %>
-    <h2>Welcome <%= current_user.user_name %> </h2>
+    <% if current_user %>
+    <h2>Welcome <%= current_user.email %> </h2>
     <form action="<%=session_url%>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Logout">
@@ -13,7 +13,7 @@
     <form action="<%=new_session_url%>" method="get">
       <input type="submit" value="Login">
 
-    <% end %> -->
+    <% end %>
 
 
 

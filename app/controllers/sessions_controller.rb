@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login(@user)
-      render json: ["Session Started"]
+      render json: @user
+      # redirect_to users_url
     else
       render json: ["Invalid Credentials"]
     end
