@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+  
   def index
     @band = Band.all
     render :index
