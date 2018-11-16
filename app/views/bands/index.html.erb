@@ -2,5 +2,10 @@
 
 <% @band.each do |bands| %>
 <%= bands.name %>
-<br>  
+
+<br>
 <% end %>
+<br>
+<form class="" action="<%=new_band_url%>" method="get">
+  <input type="submit" value="Add a Band">
+</form>

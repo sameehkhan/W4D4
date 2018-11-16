@@ -4,6 +4,17 @@
     <title>MusicShare</title>
     <h1>Music Share</h1>
 
+    <!-- <% if current_user %>
+    <h2>Welcome <%= current_user.email %> </h2>
+    <form action="<%=session_url%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Logout">
+    <% else %>
+    <form action="<%=new_session_url%>" method="get">
+      <input type="submit" value="Login">
+
+    <% end %> -->
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,15 +26,3 @@
     <%= yield %>
   </body>
 </html>
-
-
-<!-- <% if current_user %>
-<h2>Welcome <%= current_user.email %> </h2>
-<form action="<%=session_url%>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Logout">
-<% else %>
-<form action="<%=new_session_url%>" method="get">
-  <input type="submit" value="Login">
-
-<% end %> -->

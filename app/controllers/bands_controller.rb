@@ -18,7 +18,8 @@ class BandsController < ApplicationController
   end
 
   def edit
-
+    @band = Band.find(params[:id])
+    render :edit
   end
 
   def show
@@ -27,11 +28,16 @@ class BandsController < ApplicationController
   end
 
   def update
-
+    @band = Band.find(params[:id])
+    if @band.update_attributes(band_params)
+      redirect_to band_url(@band)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    
+
   end
 
   def band_params
