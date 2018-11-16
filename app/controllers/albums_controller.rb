@@ -1,10 +1,13 @@
 class AlbumsController < ApplicationController
+
+
   def index
     @album = Album.all
     render :index
   end
 
   def create
+    @bands = Band.all
     @album = Album.new(band_params)
     if @album.save
       render json: @album
